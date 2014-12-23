@@ -1,12 +1,12 @@
 Name:		kpat
-Version:	14.12.0
+Version:	4.14.3
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/kpatience/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 Requires:	libkdegames-common
 Conflicts:	kdegames4-devel < 1:4.5.71-0.svn1184269.2
