@@ -6,99 +6,57 @@ Summary:	Several patience card games
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/kpatience/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 Requires:	libkdegames-common
 Conflicts:	kdegames4-devel < 1:4.5.71-0.svn1184269.2
 Conflicts:	kdegames4-core < 1:4.9.80
+BuildRequires:	cmake(ECM)
+BuildRequires:  cmake(KF5CoreAddo)                                                                     
+BuildRequires:  cmake(KF5Config)                                                                       
+BuildRequires:  cmake(KF5WidgetsAons)                                                                  
+BuildRequires:  cmake(KF5Config)                                                                       
+BuildRequires:  cmake(KF5DBusAddo)                                                                     
+BuildRequires:  cmake(KF5Declarate)                                                                    
+BuildRequires:  cmake(KF5I18n)                                                                         
+BuildRequires:  cmake(KF5GuiAddon)                                                                     
+BuildRequires:  cmake(KF5ConfigWiets)                                                                  
+BuildRequires:  cmake(KF5ItemView)                                                                     
+BuildRequires:  cmake(KF5IconThem)                                                                     
+BuildRequires:  cmake(KF5Completi)                                                                     
+BuildRequires:  cmake(KF5TextWidgs)                                                                    
+BuildRequires:  cmake(KF5XmlGui)                                                                       
+BuildRequires:  cmake(KF5KIO)                                                                          
+BuildRequires:  cmake(KF5NotifyCoig)                                                                   
+BuildRequires:  cmake(KF5NewStuff)
+BuildRequires:	cmake(KF5KDEGames)
 
 %description -n kpat
 KPatience is a relaxing card sorting game. To win the game a player has to
 arrange a single deck of cards in certain order amongst each other.
 
 %files -n kpat
-%{_kde_bindir}/kpat
-%{_kde_libdir}/libkcardgame.so
-%{_kde_applicationsdir}/kpat.desktop
-%{_kde_appsdir}/kpat
-%{_kde_datadir}/config.kcfg/kpat.kcfg
-%{_kde_configdir}/kpat.knsrc
-%{_kde_configdir}/kcardtheme.knsrc
-%{_kde_docdir}/*/*/kpat
-%{_kde_iconsdir}/hicolor/*/apps/kpat.png
-%{_datadir}/mime/packages/kpatience.xml
+%{_bindir}/kpat                                                                                        
+%{_libdir}/libkcardgame.so                                                                             
+%{_datadir}/applications/org.kde.kpat.desktop                                                          
+%{_datadir}/apps/kpat  
+%{_datadir}/kxmlgui5/kpat/kpatui.rc
+%{_datadir}/config.kcfg/kpat.kcfg                                                                      
+%{_datadir}/config/kpat.knsrc                                                                          
+%{_datadir}/config/kcardtheme.knsrc                                                                    
+%doc %{_docdir}/*/*/kpat                                                                               
+%{_iconsdir}/hicolor/*/apps/kpat.png                                                                   
+%{_datadir}/mime/packages/kpatience.xml     
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
-- New version 4.14.1
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- New version 4.13.2
-
-* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
-- New version 4.12.4
-
-* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
-- New version 4.12.3
-
-* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
-- New version 4.12.2
-
-* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
-- New version 4.12.1
-
-* Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
-- New version 4.11.4
-
-* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
-- New version 4.11.3
-
-* Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
-- New version 4.11.2
-
-* Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.1-1
-- New version 4.11.1
-
-* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
-- New version 4.11.0
-
-* Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
-- New version 4.10.5
-
-* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
-- New version 4.10.4
-
-* Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
-- New version 4.10.3
-
-* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
-- New version 4.10.2
-
-* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
-- New version 4.10.1
-
-* Wed Feb 13 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
-- Split from kdegames4 package
-- Update files
+%ninja_install -C build
 
