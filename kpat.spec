@@ -1,6 +1,6 @@
 Name:		kpat
 Version:	15.04.3
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
