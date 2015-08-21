@@ -1,6 +1,6 @@
 Name:		kpat
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
@@ -21,7 +21,7 @@ BuildRequires:  cmake(KF5Declarative)
 BuildRequires:  cmake(KF5I18n)
 BuildRequires:  cmake(KF5GuiAddons)
 BuildRequires:  cmake(KF5ConfigWidgets)
-BuildRequires:  cmake(KF5ItemView)
+BuildRequires:  cmake(KF5ItemViews)
 BuildRequires:  cmake(KF5IconThemes)
 BuildRequires:  cmake(KF5Completion)
 BuildRequires:  cmake(KF5TextWidgets)
@@ -36,17 +36,17 @@ KPatience is a relaxing card sorting game. To win the game a player has to
 arrange a single deck of cards in certain order amongst each other.
 
 %files -n kpat
-%{_bindir}/kpat                                                                                        
-%{_libdir}/libkcardgame.so                                                                             
-%{_datadir}/applications/org.kde.kpat.desktop                                                          
-%{_datadir}/apps/kpat  
+%config %{_sysconfdir}/xdg/kpat.knsrc
+%config %{_sysconfdir}/xdg/kcardtheme.knsrc
+%{_bindir}/kpat
+%{_libdir}/libkcardgame.so
+%{_datadir}/applications/org.kde.kpat.desktop
+%{_datadir}/kpat
 %{_datadir}/kxmlgui5/kpat/kpatui.rc
-%{_datadir}/config.kcfg/kpat.kcfg                                                                      
-%{_datadir}/config/kpat.knsrc                                                                          
-%{_datadir}/config/kcardtheme.knsrc                                                                    
-%doc %{_docdir}/*/*/kpat                                                                               
-%{_iconsdir}/hicolor/*/apps/kpat.png                                                                   
-%{_datadir}/mime/packages/kpatience.xml     
+%{_datadir}/config.kcfg/kpat.kcfg
+%{_iconsdir}/hicolor/*/apps/kpat.png
+%{_datadir}/mime/packages/kpatience.xml
+%doc %{_docdir}/*/*/kpat
 
 #------------------------------------------------------------------------------
 
@@ -59,4 +59,3 @@ arrange a single deck of cards in certain order amongst each other.
 
 %install
 %ninja_install -C build
-
