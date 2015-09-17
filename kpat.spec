@@ -41,6 +41,8 @@ BuildRequires:	cmake(KF5KDEGames)
 
 BuildRequires:	cmake(Phonon4Qt5)
 
+BuildRequires:	shared-mime-info
+
 %description -n kpat
 KPatience is a relaxing card sorting game. To win the game a player has to
 arrange a single deck of cards in certain order amongst each other.
