@@ -1,6 +1,6 @@
 Name:		kpat
-Version:	15.08.0
-Release:	2
+Version:	15.08.1
+Release:	1
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
@@ -11,6 +11,14 @@ BuildRequires:	libkdegames-devel
 Requires:	libkdegames-common
 Conflicts:	kdegames4-devel < 1:4.5.71-0.svn1184269.2
 Conflicts:	kdegames4-core < 1:4.9.80
+
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5Quick)
+BuildRequires: cmake(Qt5QuickWidgets)
+BuildRequires: cmake(Qt5Svg)
+BuildRequires: cmake(Qt5Test)
+
 BuildRequires:	cmake(ECM)
 BuildRequires:  cmake(KF5CoreAddons)
 BuildRequires:  cmake(KF5Config)
@@ -30,6 +38,8 @@ BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5NotifyConfig)
 BuildRequires:  cmake(KF5NewStuff)
 BuildRequires:	cmake(KF5KDEGames)
+
+BuildRequires:	cmake(Phonon4Qt5)
 
 %description -n kpat
 KPatience is a relaxing card sorting game. To win the game a player has to
