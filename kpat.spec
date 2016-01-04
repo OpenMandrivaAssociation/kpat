@@ -33,6 +33,8 @@ BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5NotifyConfig)
 BuildRequires:	cmake(KF5NewStuff)
 BuildRequires:	cmake(KF5KDEGames)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(Phonon4Qt5)
 BuildRequires:	shared-mime-info
 Requires:	libkdegames-common >= 1:15.12.0
