@@ -1,5 +1,5 @@
 Name:		kpat
-Version:	15.12.0
+Version:	15.12.1
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
