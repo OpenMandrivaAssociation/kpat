@@ -1,5 +1,5 @@
 Name:		kpat
-Version:	16.04.2
+Version:	16.04.3
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
