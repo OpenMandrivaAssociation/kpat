@@ -1,5 +1,5 @@
 Name:		kpat
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
@@ -41,11 +41,11 @@ Requires:	libkdegames-common >= 1:15.12.0
 Conflicts:	kdegames4-devel < 1:4.5.71-0.svn1184269.2
 Conflicts:	kdegames4-core < 1:4.9.80
 
-%description -n kpat
+%description
 KPatience is a relaxing card sorting game. To win the game a player has to
 arrange a single deck of cards in certain order amongst each other.
 
-%files -n kpat
+%files -f %{name}.lang
 %config %{_sysconfdir}/xdg/kpat.knsrc
 %config %{_sysconfdir}/xdg/kcardtheme.knsrc
 %{_bindir}/kpat
@@ -56,7 +56,6 @@ arrange a single deck of cards in certain order amongst each other.
 %{_datadir}/config.kcfg/kpat.kcfg
 %{_iconsdir}/hicolor/*/apps/kpat.png
 %{_datadir}/mime/packages/kpatience.xml
-%doc %{_docdir}/*/*/kpat
 
 #------------------------------------------------------------------------------
 
@@ -69,3 +68,4 @@ arrange a single deck of cards in certain order amongst each other.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html --with-man
