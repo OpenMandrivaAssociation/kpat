@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	 18.04.2
-Release:	2
+Version:	 18.12.1
+Release:	1
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
@@ -38,6 +38,7 @@ BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(Phonon4Qt5)
 BuildRequires:	shared-mime-info
+BuildRequires:	pkgconfig(libfreecell-solver)
 Requires:	libkdegames-common >= 1:15.12.0
 Conflicts:	kdegames4-devel < 1:4.5.71-0.svn1184269.2
 Conflicts:	kdegames4-core < 1:4.9.80
@@ -47,13 +48,15 @@ KPatience is a relaxing card sorting game. To win the game a player has to
 arrange a single deck of cards in certain order amongst each other.
 
 %files -f %{name}.lang
-%config %{_sysconfdir}/xdg/kpat.knsrc
-%config %{_sysconfdir}/xdg/kcardtheme.knsrc
+%{_sysconfdir}/xdg/kpat.knsrc
+%{_sysconfdir}/xdg/kcardtheme.knsrc
+%{_sysconfdir}/xdg/kpat.categories
 %{_bindir}/kpat
 %{_libdir}/libkcardgame.so
 %{_datadir}/applications/org.kde.kpat.desktop
 %{_datadir}/kpat
 %{_datadir}/kxmlgui5/kpat/kpatui.rc
+%{_datadir}/metainfo/org.kde.kpat.appdata.xml
 %{_datadir}/config.kcfg/kpat.kcfg
 %{_iconsdir}/hicolor/*/apps/kpat.png
 %{_datadir}/mime/packages/kpatience.xml
