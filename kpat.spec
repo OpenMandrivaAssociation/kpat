@@ -1,6 +1,10 @@
+# Workaround for lld bug
+# lld 9.0.0-20190709 errors out during final linking
+%global ldflags %{ldflags} -fuse-ld=gold
+
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	 19.04.2
+Version:	 19.07.80
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
@@ -50,7 +54,7 @@ arrange a single deck of cards in certain order amongst each other.
 %files -f %{name}.lang
 %{_sysconfdir}/xdg/kpat.knsrc
 %{_sysconfdir}/xdg/kcardtheme.knsrc
-%{_sysconfdir}/xdg/kpat.categories
+%{_datadir}/qlogging-categories5/kpat.categories
 %{_bindir}/kpat
 %{_libdir}/libkcardgame.so
 %{_datadir}/applications/org.kde.kpat.desktop
