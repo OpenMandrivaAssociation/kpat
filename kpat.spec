@@ -1,7 +1,3 @@
-# Workaround for lld bug
-# lld 9.0.0-20190709 errors out during final linking
-%global ldflags %{ldflags} -fuse-ld=gold
-
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
 Version:	 19.07.80
