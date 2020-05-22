@@ -1,7 +1,10 @@
+# https://bugs.kde.org/show_bug.cgi?id=407854
+%global optflags %{optflags} -DNDEBUG
+
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	 20.04.1
-Release:	1
+Version:	20.04.1
+Release:	2
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
