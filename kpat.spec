@@ -3,7 +3,7 @@
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	20.11.80
+Version:	20.11.90
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
