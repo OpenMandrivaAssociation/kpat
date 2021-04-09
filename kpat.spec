@@ -3,7 +3,7 @@
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	20.12.3
+Version:	21.03.90
 Release:	1
 Epoch:		1
 Summary:	Several patience card games
@@ -59,7 +59,6 @@ arrange a single deck of cards in certain order amongst each other.
 %{_libdir}/libkcardgame.so
 %{_datadir}/applications/org.kde.kpat.desktop
 %{_datadir}/kpat
-%{_datadir}/kxmlgui5/kpat/kpatui.rc
 %{_datadir}/metainfo/org.kde.kpat.appdata.xml
 %{_datadir}/config.kcfg/kpat.kcfg
 %{_iconsdir}/hicolor/*/apps/kpat.png
