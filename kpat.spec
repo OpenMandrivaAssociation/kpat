@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
 Version:	23.08.4
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
