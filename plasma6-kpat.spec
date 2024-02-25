@@ -7,7 +7,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-kpat
 Version:	24.01.96
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -47,9 +47,7 @@ BuildRequires:	cmake(Phonon4Qt6)
 BuildRequires:	shared-mime-info
 BuildRequires:	pkgconfig(libfreecell-solver)
 BuildRequires:	pkgconfig(libblack-hole-solver)
-Requires:	libkdegames-common >= 1:16.12.0
-Conflicts:	kdegames4-devel < 1:4.6.71-0.svn1184269.2
-Conflicts:	kdegames4-core < 1:4.9.80
+Requires:	plasma6-libkdegames-common
 
 %description
 KPatience is a relaxing card sorting game. To win the game a player has to
