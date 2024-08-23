@@ -6,7 +6,7 @@
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-kpat
-Version:	24.05.2
+Version:	24.08.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
@@ -56,6 +56,7 @@ arrange a single deck of cards in certain order amongst each other.
 %files -f %{name}.lang
 %{_datadir}/knsrcfiles/kpat.knsrc
 %{_datadir}/knsrcfiles/kcardtheme.knsrc
+%{_datadir}/qlogging-categories6/kpat.renamecategories
 %{_datadir}/qlogging-categories6/kpat.categories
 %{_bindir}/kpat
 %{_libdir}/libkcardgame.so
