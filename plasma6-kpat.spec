@@ -11,7 +11,7 @@ Release:	%{?git:0.%{git}.}1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/kpatience/
+URL:		https://www.kde.org/applications/games/kpatience/
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/kpat/-/archive/%{gitbranch}/kpat-%{gitbranchd}.tar.bz2#/kpat-%{git}.tar.bz2
 %else
