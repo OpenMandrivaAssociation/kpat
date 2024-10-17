@@ -9,7 +9,7 @@ Epoch:		1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/kpatience/
+URL:		https://www.kde.org/applications/games/kpatience/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KF5KDEGames)
 BuildRequires:	cmake(Qt5Widgets)
