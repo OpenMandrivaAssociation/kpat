@@ -5,7 +5,7 @@
 %global optflags %{optflags} -DNDEBUG
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
-Name:		plasma6-kpat
+Name:		kpat
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Several patience card games
