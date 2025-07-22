@@ -6,7 +6,7 @@
 
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		kpat
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Several patience card games
 Group:		Graphical desktop/KDE
@@ -47,7 +47,12 @@ BuildRequires:	cmake(Phonon4Qt6)
 BuildRequires:	shared-mime-info
 BuildRequires:	pkgconfig(libfreecell-solver)
 BuildRequires:	pkgconfig(libblack-hole-solver)
-Requires:	plasma6-libkdegames-common
+Requires:	libkdegames-common
+
+%rename plasma6-kpat
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KPatience is a relaxing card sorting game. To win the game a player has to
@@ -67,18 +72,3 @@ arrange a single deck of cards in certain order amongst each other.
 %{_iconsdir}/hicolor/*/apps/kpat.png
 %{_datadir}/mime/packages/kpatience.xml
 %{_mandir}/man6/kpat.6*
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kpat-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --with-html --with-man --all-name
